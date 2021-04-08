@@ -4,11 +4,12 @@ import { Helmet } from 'react-helmet'
 import { CustomButton } from '../../components/atoms'
 import Navbar from '../../components/organisme/Navbar'
 import { Link } from 'react-router-dom'
+import { Footer } from '../../components/templates'
 
 export default function Products(){
    const [productCategory, useProductCategory] = useState("Favourite")
    return(
-      <div className="showInAnimation poppinsFont">
+      <div className="showInAnimation poppinsFont productsDesktop">
          <Helmet>
             <title>In Cafe - Our Products</title>
          </Helmet>
@@ -24,8 +25,8 @@ export default function Products(){
                         <img src="https://doyanresep.com/wp-content/uploads/2018/12/cara-membuat-nasi-goreng-telur.jpg" style={{borderRadius: "50%", height: "8vw", marginBottom: "1vw"}}/>
                         <p className="foodCouponTitle noMargin">Fried Rice</p>
                         <p className="foodCouponTitle">20% OFF</p>
-                        <p className="noMargin" style={{marginTop: "0.8vw"}}>Buy 1 Choco Oreo and get 20% off</p>
-                        <p className="noMargin">for Fried Rice</p>
+                        <p className="noMargin" style={{fontSize: "0.8vw", marginTop: "0.8vw"}}>Buy 1 Choco Oreo and get 20% off</p>
+                        <p className="noMargin" style={{fontSize: "0.8vw"}}>for Fried Rice</p>
                      </div>
                      <div className="yellowBottomCoupons">
                         <p style={{fontSize: "1vw"}}>COUPON CODE</p>
@@ -55,6 +56,7 @@ export default function Products(){
                </div>
             </div>
          </div>
+         <Footer/>
       </div>
    )
 }

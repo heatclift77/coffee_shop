@@ -4,9 +4,9 @@
    .ourProductsRightSide {width: 70vw;}
    .promoForYouText {color: #6A4029; font-size: 1.5vw; font-weight: 600; padding: 1.5vw 0;}
    .productCoupons {align-items: center;}
-   .yellowProductCoupons {background: #FFCB65; position: relative; text-align: center; transition-duration: 0.5s; z-index: 2;}
+   .yellowProductCoupons {background: #FFCB65; height: 70vh; position: relative; text-align: center; transition-duration: 0.5s; z-index: 2;}
    .yellowProductCoupons:hover {background: #ffde9b; cursor: pointer;}
-   .yellowTopCoupons {border-bottom: 0.15vw dashed black; padding: 2vw;}
+   .yellowTopCoupons {border-bottom: 0.15vw dashed black; padding: 2vw 1vw;}
    .yellowBottomCoupons {padding: 2vw 0;}
    .blackProductCoupons {background: black; height: 60vh; left: 8%; position: absolute; width: 10vw; z-index: 1;}
    .brownProductCoupons {background: #6A4029; height: 50vh; left: 9.5%; position: absolute; width: 10vw; z-index: 0;}
@@ -21,5 +21,5 @@
 
 /* MOBILE */
 @media(max-width: 768px){
-   
+   .productsDesktop {display: none;}
 }

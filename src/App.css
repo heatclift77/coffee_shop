@@ -48,11 +48,22 @@
 .hoverThis:hover {cursor: pointer; opacity: 0.5;}
 .noMargin {margin: 0 !important;}
 
+/* MAP BUTTON - CENTERIZE */
+.dropdownMenuCenter {
+  left: 50% !important;
+  padding: 1vw;
+  right: auto !important;
+  text-align: center !important;
+  transform: translate(-50%, -111%) !important;
+  z-index: 1;
+}
+.justifyContentCenter {justify-content: center}
+
 @import url("https://fonts.googleapis.com/css?family=Rubik");
 .rubikFont {font-family: 'Rubik'}
 
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,700,900');
 .poppinsFont {font-family: 'Poppins'}
 
-.showInAnimation {animation: showOpacity 1s;}
+.showInAnimation {animation: showOpacity 0.5s;}
 @keyframes showOpacity{from{opacity: 0;} to{opacity: 1;}}

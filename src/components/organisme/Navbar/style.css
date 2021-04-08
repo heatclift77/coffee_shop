@@ -6,7 +6,7 @@
     .navbarReusable {
         border-bottom: 0.1vw solid #DEDEDE;
         justify-content: space-between;
-        padding: 25px 100px;
+        padding: 1.5vw 6vw;
         width: 100%;
     }
     .navBtn {color: black; font-size: 1vw; padding: 0 1.5vw;}

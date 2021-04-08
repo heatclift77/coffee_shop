@@ -1,6 +1,7 @@
 import {BtnLg} from './components/atoms'
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import ForgotPassword from './pages/ForgotPassword'
+import HomePage from './pages/HomePage'
 import Products from './pages/Products'
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -20,6 +21,7 @@ function App() {
         <Switch>
           <Route path="/forgot-password" component={ForgotPassword}/>
           <Route path="/products" component={Products}/>
+          <Route path="/home" component={HomePage}/>
         </Switch>
     </BrowserRouter>
   );

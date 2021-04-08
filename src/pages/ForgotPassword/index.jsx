@@ -1,6 +1,7 @@
 import './style.css'
 import { Helmet } from 'react-helmet'
 import { MainInput, BtnLg, CustomButton } from '../../components/atoms'
+import { Footer } from '../../components/templates'
 
 export default function ForgotPassword(){
     return(
@@ -35,6 +36,7 @@ export default function ForgotPassword(){
                     <CustomButton bgClr="#6A4029" txClr="white" brRad="20px" btnPdg="20px 100px" ftSize="16px" ftWg="600" mrgn="1vw 0" value="Resend Link"/>
                 </form>
             </div>
+            <Footer/>
         </div>
     )
 }
