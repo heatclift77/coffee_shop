@@ -1,12 +1,14 @@
 import './style.css'
 import {useState} from 'react'
 import { Helmet } from 'react-helmet'
+import {useHistory} from 'react-router-dom'
 import { MainInput, BtnLg, CustomButton } from '../../components/atoms'
 import { Footer } from '../../components/templates'
 import axios from 'axios'
 import swal from 'sweetalert'
 
 export default function ForgotPassword(){
+    const history = useHistory()
     const [email, setEmail] = useState('')
     function handleChange(e){
         setEmail(e.target.value)
@@ -19,9 +21,14 @@ export default function ForgotPassword(){
                 email : email
             }
         })
-        .then(response=>{})
+        .then(response=>{
+            swal('Berhasil', response.data.data.message, 'success')
+            history.push('/user/login')
+        })
         .catch(err=>{
-            console.log(err.response);
+            if(err.response.status == 404){
+                swal('Oops', err.response.data.message)
+            }
         })
     }
     return(

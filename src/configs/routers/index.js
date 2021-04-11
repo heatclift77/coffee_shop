@@ -1,4 +1,5 @@
-import {Login, Profil, SignUp, Products, ProductDetails, ForgotPassword, Homepage, UserVerify, Payment, ChangePassword} from '../../pages'
+import {Login, Profil, SignUp, Products, ProductDetails, ForgotPassword, 
+    Homepage, UserVerify, Payment, ChangePassword, AdminAddPromo} from '../../pages'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import {useDispatch} from 'react-redux'
 import axios from 'axios'
@@ -37,6 +38,7 @@ function Routers() {
                 <Route path='/user/SignUp' component={SignUp} />
                 <Route path='/user/ForgotPassword' component={ForgotPassword} />
                 <Route path='/user/Payment' component={Payment} />
+                <Route path='/Admin/Promo' component={AdminAddPromo} />
                 <Route path='/verify' component={UserVerify} />
                 <Route path='/reset' component={ChangePassword} />
                 <Route path='/Products' component={Products} />
