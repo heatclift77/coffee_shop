@@ -5,15 +5,15 @@ import CoffeeLogo from '../../atoms/CoffeeLogo'
 import {BtnLg, CustomButton} from '../../atoms/'
 
 const Navbar = ()=>{
-    const [sementaraBuatTesLoginDoang, useSementara] = useState(false)
+    const [sementaraBuatTesLoginDoang, setSementara] = useState(false)
     return(
         <div className="navbarReusable rubikFont">
             {/* NAVBAR - DESKTOP */}
             <div className="navbarDesktop">
                 <CoffeeLogo logoWidth="11vw"/>
                 <div className="displayRow navFourBtn">
-                    <Link className="navBtn" onClick={ () => {localStorage.setItem("navbarState", "Home"), window.location ="/Home"} } style={localStorage.getItem("navbarState") === "Home" || localStorage.getItem("navbarState") === null ? {color: "#6A4029", fontWeight: "bold"} : null}>Home</Link>
-                    <Link className="navBtn" onClick={ () => {localStorage.setItem("navbarState", "Product"), window.location ="Products"} } style={localStorage.getItem("navbarState") === "Product" ? {color: "#6A4029", fontWeight: "bold"} : null}>Product</Link>
+                    <Link className="navBtn" onClick={ () => {localStorage.setItem("navbarState", "Home"); window.location ="/Home"} } style={localStorage.getItem("navbarState") === "Home" || localStorage.getItem("navbarState") === null ? {color: "#6A4029", fontWeight: "bold"} : null}>Home</Link>
+                    <Link className="navBtn" onClick={ () => {localStorage.setItem("navbarState", "Product"); window.location ="Products"} } style={localStorage.getItem("navbarState") === "Product" ? {color: "#6A4029", fontWeight: "bold"} : null}>Product</Link>
                     <Link className="navBtn" onClick={ () => {localStorage.setItem("navbarState", "Cart")} } style={localStorage.getItem("navbarState") === "Cart" ? {color: "#6A4029", fontWeight: "bold"} : null}>Your Cart</Link>
                     <Link className="navBtn" onClick={ () => {localStorage.setItem("navbarState", "History")} } style={localStorage.getItem("navbarState") === "History" ? {color: "#6A4029", fontWeight: "bold"} : null}>History</Link>
                 </div>

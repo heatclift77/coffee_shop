@@ -1,13 +1,15 @@
 import React,{useState} from 'react'
+import {useHistory, Link} from 'react-router-dom'
 import axios from 'axios'
+import swal from 'sweetalert'
 // -----------component-------------
 import {CardFly} from '../organisme'
-import {MainInput, BtnSm, BtnLg, Heading5} from '../atoms'
+import {MainInput, BtnSm, BtnLg, Heading5, CustomButton} from '../atoms'
 import {Logo} from '../molekuls'
 // ----img-------
 import img from '../../assets/img-1.png'
 function AuthSignUp() {
-    const API = 'https://api2.terhambar.com/'
+    const history = useHistory()
     const [data, setData] = useState({
         email : '',
         password : '',
@@ -34,7 +36,7 @@ function AuthSignUp() {
     function handleSubmit(e){
         axios({
             method : 'POST',
-            url : `${API}/v1/users`,
+            url : `${process.env.REACT_APP_SERVER}/v1/users`,
             data : {
                 email : data.email,
                 password : data.password,
@@ -42,9 +44,19 @@ function AuthSignUp() {
             }
         })
         .then(response=>{
-            console.log(response.data.data[0].status);
+            if(response.status == 201){
+                swal('Berhasil', response.data.message, 'success')
+                history.push('/user/login')
+            }else{
+            }
         })
-        .catch(err=>console.log(err))
+        .catch(err=>{
+            if(err.response.data.data.field == 'email'){
+                swal('Oops', 'Email tidak Boleh Kosong', 'error')
+            }else if(err.response.data.data.field == 'password'){
+                swal('Oops', 'password tidak Boleh Kosong', 'error')
+            }
+        })
     }
     return (
         <div className='container-fluid position-relative'>
@@ -58,11 +70,7 @@ function AuthSignUp() {
                             <Logo />
                         </div>
                         <div>
-                            <BtnSm 
-                            value='Login'
-                            color='btn-orange'
-                            rounded='rounded-xl'
-                            />
+                            <Link to='/user/login'><CustomButton bgClr="#FFBA33" brRad="0.5vw" btnPdg="0.5vw 3vw" ftSize="1.1vw" ftWg="bold" mrgn="0.77vw 0" txClr="#6A4029" value="Login" wd="auto"></CustomButton></Link>
                         </div>
                     </div>
                     <div className="row">
@@ -80,12 +88,7 @@ function AuthSignUp() {
                                 <MainInput label='Phone Number:' placeholder='Enter Your Phone Number' type='number' onChange={handlePhoneNumberChange} />
                             </div>
                             <div>
-                                <BtnLg 
-                                value='Sign Up'
-                                color='btn-orange'
-                                rounded='rounded-md'
-                                onClick={handleSubmit}
-                                />
+                                <CustomButton bgClr="#FFBA33" brRad="1vw" btnPdg="1rem 3rem" ftSize="1.1rem"  ftWg="bold" mrgn="0.77vw 0" txClr="white" value="Sign Up" wd="100%" onClick={handleSubmit}></CustomButton>
                             </div>
                         </div>
                     </div>

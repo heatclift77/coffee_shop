@@ -3,12 +3,14 @@ import './App.css'
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
+import store from './configs/redux'
+import {Provider} from 'react-redux'
 
 function App() {
   return (
-    <div>
+    <Provider store={store}>
         <Routers/>
-    </div>
+    </Provider>
   )
 }
 

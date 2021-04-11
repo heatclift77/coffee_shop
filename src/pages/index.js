@@ -5,4 +5,8 @@ import Profil from './Profil'
 import Products from './Products'
 import ProductDetails from './ProductDetails'
 import ForgotPassword from './ForgotPassword'
-export {Homepage, SignUp, Login, Profil, ForgotPassword, Products, ProductDetails}
+import UserVerify from './UserVerify'
+import Payment from './Payment'
+import ChangePassword from './ChangePassword'
+import AdminAddPromo from './AdminAddPromo'
+export {SignUp, Login, Profil, ForgotPassword, ProductDetails, Products, UserVerify, Homepage, Payment, ChangePassword, AdminAddPromo}

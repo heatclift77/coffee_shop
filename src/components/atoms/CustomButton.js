@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function CustomButton({value, bgClr, brdr = "none", btnPdg, bxSd, ftSize, ftWg, mrgn, brRad, txClr, wd}){
+export default function CustomButton({value, bgClr, brdr = "none", btnPdg, bxSd, ftSize, ftWg, mrgn, brRad, txClr, wd, onClick}){
     return (
         <div>
-            <button className="hoverThis" style={
+            <button className="hoverThis" onClick={onClick} value={value} style={
                 {
                 background: bgClr, 
                 border: brdr, 
